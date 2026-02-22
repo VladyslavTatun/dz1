@@ -1,0 +1,58 @@
+class Device:
+    def __init__(self, name):
+        self.name = name
+        self.is_on = False
+
+    def turn_on(self):
+        if not self.is_on:
+            self.is_on = True
+            print(f"{self.name} увімкнено.")
+        else:
+            print(f"{self.name} вже увімкнено.")
+
+    def turn_off(self):
+        if self.is_on:
+            self.is_on = False
+            print(f"{self.name} вимкнено.")
+        else:
+            print(f"{self.name} вже вимкнено.")
+
+
+class Laptop(Device):
+    def code(self):
+        if self.is_on:
+            print(f"{self.name} використовується для програмування.")
+        else:
+            print(f"Спочатку увімкніть {self.name}.")
+
+
+class Smartphone(Device):
+    def call(self):
+        if self.is_on:
+            print(f"{self.name} здійснює дзвінок.")
+        else:
+            print(f"Спочатку увімкніть {self.name}.")
+
+
+class TV(Device):
+    def watch(self):
+        if self.is_on:
+            print(f"{self.name} показує фільм.")
+        else:
+            print(f"Спочатку увімкніть {self.name}.")
+
+
+laptop = Laptop("MacBook")
+phone = Smartphone("iPhone")
+tv = TV("Samsung TV")
+
+laptop.turn_on()
+laptop.code()
+
+phone.turn_on()
+phone.call()
+
+tv.turn_on()
+tv.watch()
+
+tv.turn_off()
