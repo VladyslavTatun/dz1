@@ -1,0 +1,23 @@
+import colorama
+from colorama import Fore, Back, Style
+import inspect
+
+colorama.init(autoreset=True)
+
+print(" Інтроспекція модуля colorama ")
+print("Атрибути та методи:")
+print(dir(colorama))
+
+print("\n Основні компоненти ")
+print("Fore:", dir(Fore))
+print("Back:", dir(Back))
+print("Style:", dir(Style))
+
+print("\n Документація init ")
+print(inspect.getdoc(colorama.init))
+
+print("\n Приклад використання ")
+print(Fore.RED + "Червоний текст")
+print(Back.GREEN + "Текст із зеленим фоном")
+print(Style.BRIGHT + "Яскравий текст")
+print(Style.RESET_ALL + "Звичайний текст")
